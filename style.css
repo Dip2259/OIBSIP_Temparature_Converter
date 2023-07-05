@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Clicker+Script&family=Dancing+Script&family=Fira+Sans&family=Karla&family=Lobster&family=Mogra&family=Montserrat&family=Permanent+Marker&family=Poppins&family=Rubik&family=Signika+Negative&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('./Images/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.heading{
+    width: fit-content;
+    margin: 1rem auto;
+}
+.heading h1{
+    font-size: 1.9rem;
+    font-family: 'Acme', sans-serif;
+    text-transform: uppercase;
+    user-select: none;
+}
+.container{
+    width: fit-content;
+    margin: 1rem auto;
+    background-color: #40d3c838;
+    border-radius: 10px;
+    padding: 10px;
+}
+.inputs{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.tempinp,.temptype{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.tempinp{
+    
+    margin: 0.45rem 0.5rem 0.65rem 0.5rem;
+    flex: 0 0 68%;
+}
+.temptype{
+    margin: 0.2rem 0.5rem 0.65rem 0rem;
+    flex: 0 0 20%;
+}
+.overlap{
+    position: absolute;
+    top: 95%;
+    left: 29%;
+    background-color: #194ec282;
+    padding: 4px 3px;
+    border-radius: 10px;
+    font-family: 'Mogra', cursive;
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0;
+}
+.active{
+    opacity: 1;
+    animation: alert 1s linear;
+}
+.overlap::after{
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: 3%;
+    width: 8px;
+    height: 8px;
+    background-color: #194ec2e0;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.container input[type = text], .container span{
+    margin-top: 0.2rem;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.2rem
+}
+.container input[type=text]:focus{
+    box-shadow: 0px 0px 6px 1px black;
+}
+.container label{
+    font-family: 'Signika Negative', sans-serif;
+    color: rgb(58, 55, 55);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+.options{
+    margin-top: 0.2rem;
+    text-align: center;
+    padding: 0.65rem 0.5rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    user-select: none;
+}
+.options:focus{
+    box-shadow: 0px 0px 5px 1px black;
+}
+.results{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.res1,.res2{
+    width: 80%;
+    margin: 0.35rem;
+    pointer-events: none;
+}
+.buttons{
+    margin: 1rem auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    margin: 0 0.2rem;
+    padding: 0.5rem 0.55rem;
+    background-color: rgb(35, 42, 182);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: antiquewhite;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+@keyframes alert {
+    0%{
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@media screen and (max-width:441px) {
+    body{
+        background-position: inherit;
+        background-size: auto;
+    }
+    .inputs{
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .tempinp{
+        width: 100%;
+        padding-right: 0.5rem
+    }
+    .container input[type = text]{
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+    .container label{
+        font-size: 0.85rem;
+    }
+    .options{
+        font-size: 0.95rem;
+    }
+    .heading h1{
+        font-size: 1.4rem;
+    }
+    .overlap{
+        top: 45%;
+        font-size: 0.75rem;
+    }
+}
+@media screen and (max-width:314px) {
+    .container input[type = text]{
+        padding: 0.3rem;
+        font-size: 0.65rem;
+    }
+    .container label{
+        font-size: 0.55rem;
+    }
+    .options{
+        font-size: 0.65rem;
+    }
+    .heading h1{
+        font-size: 1.1rem;
+    }
+    .overlap{
+        top: 41%;
+        font-size: 0.45rem;
+    }
+    .heading{
+        text-align: center;
+    }
+    .btn{
+        font-size: 0.55rem;
+    }
+}
+@media screen and (max-width:180px) {
+    .heading{
+        text-align: center;
+    }
+    .overlap{
+        top: 40%;
+        font-size: 0.35rem;
+    }
+    .btn{
+        font-size: 0.45rem;
+    }    
+}
